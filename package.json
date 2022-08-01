@@ -1,0 +1,40 @@
+{
+  "name": "redux-flux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.tsx",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "start": "parcel src/index.html",
+    "build-prod": "parcel build src/index.html"
+  },
+  "dependencies": {
+    "core-js": "^3.24.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@types/react": "^18.0.5",
+    "@types/react-dom": "^18.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-import-resolver-node": "^0.3.3",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^4.1.5"
+  }
+}
