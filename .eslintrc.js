@@ -69,7 +69,8 @@ const config = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-empty-function': 'off'
+    '@typescript-eslint/no-empty-function': 'off',
+    'prefer-const': 'off'
   },
   settings: {
     'import/extensions': ['.ts', '.tsx', '.json'],

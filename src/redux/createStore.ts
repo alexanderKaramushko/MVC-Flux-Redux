@@ -1,7 +1,7 @@
 export function createStore(reducer: unknown) {
-  const currentReducer = reducer;
+  let initialState: any;
   const listeners = [];
-  const isDispatching = false;
+  let isDispatching = false;
 
   function dispatch() {}
 
