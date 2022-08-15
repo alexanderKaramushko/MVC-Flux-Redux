@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 import { combineReducers, createStore } from 'redux';
 import { counterReducer } from './counterReducer';
 
-import FirstComponent from './FirstComponent';
-import SecondComponent from './SecondComponent';
+// import FirstComponent from './FirstComponent';
+// import SecondComponent from './SecondComponent';
 
 const rootReducer = combineReducers({
   counterReducer,
@@ -15,9 +15,6 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <FirstComponent />
-    <SecondComponent />
-  </Provider>,
+  <div>test</div>,
   document.querySelector('#app'),
 );

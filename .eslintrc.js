@@ -70,7 +70,8 @@ const config = {
     '@typescript-eslint/no-unused-vars': 'off',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-empty-function': 'off',
-    'prefer-const': 'off'
+    'prefer-const': 'off',
+    '@typescript-eslint/no-explicit-any': 'off'
   },
   settings: {
     'import/extensions': ['.ts', '.tsx', '.json'],
