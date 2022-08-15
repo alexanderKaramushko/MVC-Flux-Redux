@@ -1,17 +1,21 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 const FirstComponent = (props: any): ReactElement => {
-  const { value, decrement, increment } = props;
+  const { value, increment } = props;
+
+  useEffect(() => {
+    increment();
+  }, []);
 
   return (
-    <>
-      <button type="button" onClick={increment}>increment</button>
-      <button type="button" onClick={decrement}>decrement</button>
+    <div>
+      Second component:
+      {' '}
       {value}
-    </>
+    </div>
   );
 };
 

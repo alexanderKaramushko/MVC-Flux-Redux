@@ -36,7 +36,7 @@ const config = {
       ignoreTemplateLiterals: true,
       ignoreUrls: true,
     }],
-    'no-console': 'error',
+    'no-console': 'off',
     'no-debugger': 'error',
     'no-multiple-empty-lines': ['error', {
         max: 1,
@@ -66,6 +66,11 @@ const config = {
     }],
     'react-hooks/exhaustive-deps': 'off',
     '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+    'prefer-const': 'off'
   },
   settings: {
     'import/extensions': ['.ts', '.tsx', '.json'],
