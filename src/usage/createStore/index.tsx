@@ -5,7 +5,7 @@ import { reducer } from './reducer';
 
 const store = createStore(reducer);
 
-console.log(store);
+// store => {dispatch: ƒ, subscribe: ƒ, unsubscribe: ƒ}
 
 ReactDOM.render(
   <div>create store</div>,
