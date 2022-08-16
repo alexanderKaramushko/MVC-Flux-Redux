@@ -7,6 +7,12 @@ const store = createStore(reducer);
 
 // store => {dispatch: ƒ, subscribe: ƒ, unsubscribe: ƒ}
 
+store.subscribe((state) => {
+  // state => { value: 1 }
+});
+
+store.dispatch({ type: 'some type' });
+
 ReactDOM.render(
   <div>create store</div>,
   document.querySelector('#app'),

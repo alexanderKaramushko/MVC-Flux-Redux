@@ -1,9 +1,10 @@
 import { Action } from './types/action';
+import { ListenerFn } from './types/listener';
 import { ReducerFunction } from './types/reducer';
 
 export function createStore(reducer: ReducerFunction) {
   let currentState: any;
-  const listeners = [];
+  let listeners: ListenerFn[] = [];
   let isDispatching = false;
 
   function dispatch(action: Action) {
@@ -21,11 +22,25 @@ export function createStore(reducer: ReducerFunction) {
     } finally {
       isDispatching = false;
     }
+
+    listeners.forEach((listener) => listener(currentState));
   }
 
-  function subscribe() {}
+  function subscribe(listener: ListenerFn) {
+    if (isDispatching) {
+      throw new Error('cannot subscribe while dispatching');
+    }
 
-  function unsubscribe() {}
+    listeners.push(listener);
+  }
+
+  function unsubscribe(listenerToRemove: ListenerFn) {
+    if (isDispatching) {
+      throw new Error('cannot unsubscribe while dispatching');
+    }
+
+    listeners = listeners.filter((listener) => listener !== listenerToRemove);
+  }
 
   // Запуск '@@store/init' позволяет вызвать все редьюсеры,
   // чтобы получить их начальное состояние
