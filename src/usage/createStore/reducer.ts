@@ -1,5 +1,9 @@
-export function reducer(state: unknown = { value: 1 }, action: Record<string, unknown>) {
+export function reducer(state = { count: 0 }, action: Record<string, unknown>) {
   switch (action.type) {
+    case 'increment':
+      return {
+        count: state.count + 1,
+      };
     default:
       return state;
   }
