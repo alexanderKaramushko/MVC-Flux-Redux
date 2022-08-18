@@ -12,6 +12,10 @@ class Store {
     count: 0,
   }
 
+  squares = {
+    square: 0,
+  }
+
 }
 
 MicroEvent.mixin(Store);
@@ -22,7 +26,9 @@ AppDispatcher.register((payload) => {
   switch (payload.eventName) {
     case 'increment':
       singletonStore.counts.count += 1;
-      singletonStore.trigger('change');
+      singletonStore.squares.square = singletonStore.counts.count ** 2;
+      singletonStore.trigger('changeCount');
+      singletonStore.trigger('changeSquare');
       break;
   }
 
