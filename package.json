@@ -1,5 +1,5 @@
 {
-  "name": "redux-flux",
+  "name": "MVC-flux-redux",
   "version": "1.0.0",
   "description": "",
   "main": "index.tsx",
