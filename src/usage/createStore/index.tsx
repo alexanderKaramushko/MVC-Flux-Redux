@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import * as ReactDOM from 'react-dom';
+import { combineReducers } from '../../utils/combineReducers';
 import { createStore } from '../../redux/createStore';
 import { reducer } from './reducer';
 
-const store = createStore(reducer);
+const store = createStore(combineReducers({ reducer }));
 
 // store => {dispatch: ƒ, subscribe: ƒ, unsubscribe: ƒ}
 
@@ -12,7 +13,7 @@ function Counter() {
 
   useEffect(() => {
     store.subscribe((state) => {
-      setCount(state.count);
+      setCount(state.reducer.count);
     });
   }, []);
 
