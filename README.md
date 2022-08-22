@@ -1,3 +1,3 @@
-# Redux-flux.
+# MVC-Flux-Redux.
 
-This repository is aimed to dig into the redux core to find out more about flux principles.
+This repository is created to compare MVC, Flux and Redux in practice and to point out their differences and the reasons of using Flux and Redux instead of pure MVC in frontend.
