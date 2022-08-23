@@ -11,13 +11,16 @@ function Counter() {
     singletonStore.bind('changeCount', () => {
       setCount(singletonStore.counts.count);
     });
-  });
+  }, []);
 
   return (
     <>
       <button
         type="button"
         onClick={() => {
+          AppDispatcher.dispatch({
+            eventName: 'square',
+          });
           AppDispatcher.dispatch({
             eventName: 'increment',
           });
