@@ -19,9 +19,6 @@ function Counter() {
         type="button"
         onClick={() => {
           AppDispatcher.dispatch({
-            eventName: 'square',
-          });
-          AppDispatcher.dispatch({
             eventName: 'increment',
           });
         }}
@@ -41,6 +38,12 @@ function Square() {
   const [square, setSquare] = useState(singletonStore.squares.square);
 
   useEffect(() => {
+    // здесь произойдет ошибка, так как паралелльное обновление модели запрещено во Flux
+    singletonStore.bind('changeCount', () => {
+      AppDispatcher.dispatch({
+        eventName: 'square',
+      });
+    });
     singletonStore.bind('changeSquare', () => {
       setSquare(singletonStore.squares.square);
     });
