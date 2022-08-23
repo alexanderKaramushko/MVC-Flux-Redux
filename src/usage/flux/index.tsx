@@ -11,7 +11,7 @@ function Counter() {
     singletonStore.bind('changeCount', () => {
       setCount(singletonStore.counts.count);
     });
-  });
+  }, []);
 
   return (
     <>
