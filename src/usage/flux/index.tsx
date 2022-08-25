@@ -8,10 +8,10 @@ function Counter() {
   const [count, setCount] = useState(singletonStore.counts.count);
 
   useEffect(() => {
-    singletonStore.bind('change', () => {
+    singletonStore.bind('changeCount', () => {
       setCount(singletonStore.counts.count);
     });
-  });
+  }, []);
 
   return (
     <>
@@ -25,12 +25,37 @@ function Counter() {
       >
         increment
       </button>
-      {count}
+      <div>
+        Count:
+        {' '}
+        {count}
+      </div>
     </>
   );
 }
 
+function Square() {
+  const [square, setSquare] = useState(singletonStore.squares.square);
+
+  useEffect(() => {
+    singletonStore.bind('changeSquare', () => {
+      setSquare(singletonStore.squares.square);
+    });
+  });
+
+  return (
+    <div>
+      Square:
+      {' '}
+      {square}
+    </div>
+  );
+}
+
 ReactDOM.render(
-  <Counter />,
+  <>
+    <Counter />
+    <Square />
+  </>,
   document.querySelector('#app'),
 );
